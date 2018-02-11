@@ -37,6 +37,7 @@ namespace WebApplication1
             //services.AddDbContext<ApplicationDbContext>(options =>
             //    options.UseInMemoryDatabase(Guid.NewGuid().ToString()));
             services.AddCors();
+
             var input = Environment.GetEnvironmentVariable("MYSQLCONNSTR_localdb");
             var inputArray = input.Split(';');
             var server = inputArray[1].Split('=')[1];
@@ -46,7 +47,7 @@ namespace WebApplication1
             var password = inputArray[3].Split('=')[1];
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer($"server={server};database={database};uid={username};pwd={password};port=49596")
+                options.UseSqlServer($"server={server};port=49596;database={database};uid={username};password={password}")
             );
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
