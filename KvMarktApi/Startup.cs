@@ -47,7 +47,7 @@ namespace WebApplication1
             var password = inputArray[3].Split('=')[1];
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer($"server={server};port=49596;database={database};uid={username};password={password}")
+                options.UseMySql($"server={server};port=49596;database={database};userid={username};password={password}")
             );
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
