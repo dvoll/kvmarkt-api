@@ -42,11 +42,11 @@ namespace WebApplication1
             var server = inputArray[1].Split('=')[1];
             // var port = inputArray[0].Split('=')[1];
             var database = inputArray[0].Split('=')[1];
-            var username = "username"; /*inputArray[2].Split('=')[1];*/
+            var username = inputArray[2].Split('=')[1];
             var password = inputArray[3].Split('=')[1];
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer($"server={server};database={database};userid={username};password={password};port=49596")
+                options.UseSqlServer($"server={server};database={database};uid={username};pwd={password};port=49596")
             );
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
