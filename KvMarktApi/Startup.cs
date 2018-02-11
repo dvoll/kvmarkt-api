@@ -93,6 +93,8 @@ namespace WebApplication1
                 // app.UseExceptionHandler("/Home/Error");
                 app.UseStatusCodePagesWithReExecute("/error/{0}");
                 app.UseExceptionHandler("/error/500");
+                app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
             }
 
             con.Database.EnsureCreated();
