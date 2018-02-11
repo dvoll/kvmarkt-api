@@ -37,9 +37,17 @@ namespace WebApplication1
             //services.AddDbContext<ApplicationDbContext>(options =>
             //    options.UseInMemoryDatabase(Guid.NewGuid().ToString()));
             services.AddCors();
+            var input = Environment.GetEnvironmentVariable("MYSQLCONNSTR_localdb");
+            var inputArray = input.Split(';');
+            var server = inputArray[1].Split('=')[1];
+            // var port = inputArray[0].Split('=')[1];
+            var database = inputArray[0].Split('=')[1];
+            var username = "username"; /*inputArray[2].Split('=')[1];*/
+            var password = inputArray[3].Split('=')[1];
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer($"server={server};database={database};userid={username};password={password};port=49596")
+            );
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
