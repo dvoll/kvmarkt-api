@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <UserSecretsId>aspnet-WebApplication1-133E3020-1B38-4BCB-BE81-C1688B02C8B5</UserSecretsId>
+    <UserSecretsId>aspnet-KvMarktApi-133E3020-1B38-4BCB-BE81-C1688B02C8B5</UserSecretsId>
   </PropertyGroup>
 
 

@@ -127,7 +127,7 @@ namespace KvMarktApi.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("WebApplication1.Models.ApplicationUser", b =>
+            modelBuilder.Entity("KvMarktApi.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
@@ -177,7 +177,7 @@ namespace KvMarktApi.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("WebApplication1.Models.Category", b =>
+            modelBuilder.Entity("KvMarktApi.Models.Category", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
@@ -190,7 +190,7 @@ namespace KvMarktApi.Data.Migrations
                     b.ToTable("scheme_categories");
                 });
 
-            modelBuilder.Entity("WebApplication1.Models.Contributor", b =>
+            modelBuilder.Entity("KvMarktApi.Models.Contributor", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
@@ -211,7 +211,7 @@ namespace KvMarktApi.Data.Migrations
                     b.ToTable("Contributor");
                 });
 
-            modelBuilder.Entity("WebApplication1.Models.ContributorFavoriteScheme", b =>
+            modelBuilder.Entity("KvMarktApi.Models.ContributorFavoriteScheme", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
@@ -232,7 +232,7 @@ namespace KvMarktApi.Data.Migrations
                     b.ToTable("contributor_favoriteSchemes");
                 });
 
-            modelBuilder.Entity("WebApplication1.Models.Place", b =>
+            modelBuilder.Entity("KvMarktApi.Models.Place", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
@@ -244,7 +244,7 @@ namespace KvMarktApi.Data.Migrations
                     b.ToTable("scheme_places");
                 });
 
-            modelBuilder.Entity("WebApplication1.Models.Scheme", b =>
+            modelBuilder.Entity("KvMarktApi.Models.Scheme", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
@@ -304,7 +304,7 @@ namespace KvMarktApi.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("WebApplication1.Models.ApplicationUser")
+                    b.HasOne("KvMarktApi.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -312,7 +312,7 @@ namespace KvMarktApi.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("WebApplication1.Models.ApplicationUser")
+                    b.HasOne("KvMarktApi.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -325,7 +325,7 @@ namespace KvMarktApi.Data.Migrations
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("WebApplication1.Models.ApplicationUser")
+                    b.HasOne("KvMarktApi.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -333,45 +333,45 @@ namespace KvMarktApi.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("WebApplication1.Models.ApplicationUser")
+                    b.HasOne("KvMarktApi.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("WebApplication1.Models.ContributorFavoriteScheme", b =>
+            modelBuilder.Entity("KvMarktApi.Models.ContributorFavoriteScheme", b =>
                 {
-                    b.HasOne("WebApplication1.Models.Contributor", "Contributor")
+                    b.HasOne("KvMarktApi.Models.Contributor", "Contributor")
                         .WithMany()
                         .HasForeignKey("ContributorId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("WebApplication1.Models.Scheme", "Scheme")
+                    b.HasOne("KvMarktApi.Models.Scheme", "Scheme")
                         .WithOne("ContributorFavorite")
-                        .HasForeignKey("WebApplication1.Models.ContributorFavoriteScheme", "SchemeId")
+                        .HasForeignKey("KvMarktApi.Models.ContributorFavoriteScheme", "SchemeId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("WebApplication1.Models.Scheme", b =>
+            modelBuilder.Entity("KvMarktApi.Models.Scheme", b =>
                 {
-                    b.HasOne("WebApplication1.Models.Contributor", "Author")
+                    b.HasOne("KvMarktApi.Models.Contributor", "Author")
                         .WithMany()
                         .HasForeignKey("AuthorId");
 
-                    b.HasOne("WebApplication1.Models.Category", "Category")
+                    b.HasOne("KvMarktApi.Models.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("WebApplication1.Models.Place", "Place2")
+                    b.HasOne("KvMarktApi.Models.Place", "Place2")
                         .WithMany()
                         .HasForeignKey("Place2Id");
 
-                    b.HasOne("WebApplication1.Models.Place", "Place3")
+                    b.HasOne("KvMarktApi.Models.Place", "Place3")
                         .WithMany()
                         .HasForeignKey("Place3Id");
 
-                    b.HasOne("WebApplication1.Models.Place", "Place")
+                    b.HasOne("KvMarktApi.Models.Place", "Place")
                         .WithMany()
                         .HasForeignKey("PlaceId")
                         .OnDelete(DeleteBehavior.Cascade);

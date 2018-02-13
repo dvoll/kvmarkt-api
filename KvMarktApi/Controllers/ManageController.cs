@@ -522,7 +522,7 @@ namespace KvMarktApi.Controllers
         {
             return string.Format(
                 AuthenticatorUriFormat,
-                _urlEncoder.Encode("WebApplication1"),
+                _urlEncoder.Encode("KvMarktApi"),
                 _urlEncoder.Encode(email),
                 unformattedKey);
         }
