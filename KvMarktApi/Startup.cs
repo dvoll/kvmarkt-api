@@ -8,16 +8,16 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using WebApplication1.Data;
-using WebApplication1.Models;
-using WebApplication1.Services;
+using KvMarktApi.Data;
+using KvMarktApi.Models;
+using KvMarktApi.Services;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace WebApplication1
+namespace KvMarktApi
 {
     public class Startup
     {
@@ -37,17 +37,25 @@ namespace WebApplication1
             //services.AddDbContext<ApplicationDbContext>(options =>
             //    options.UseInMemoryDatabase(Guid.NewGuid().ToString()));
             services.AddCors();
-
-            var input = Environment.GetEnvironmentVariable("MYSQLCONNSTR_localdb");
-            var inputArray = input.Split(';');
-            var server = inputArray[1].Split('=')[1];
-            // var port = inputArray[0].Split('=')[1];
-            var database = inputArray[0].Split('=')[1];
-            var username = inputArray[2].Split('=')[1];
-            var password = inputArray[3].Split('=')[1];
+            var isDev = false;
+            var connString = "";
+            if (!isDev) {
+                var input = Environment.GetEnvironmentVariable("MYSQLCONNSTR_localdb");
+                var inputArray = input.Split(';');
+                var server = inputArray[1].Split('=')[1];
+                // var port = inputArray[0].Split('=')[1];
+                var database = inputArray[0].Split('=')[1];
+                var username = inputArray[2].Split('=')[1];
+                var password = inputArray[3].Split('=')[1];
+                connString = $"server=127.0.0.1;port=49596;database=localdb;userid=azure;password=6#vWHD_$";
+            } else {
+                connString = "server=localhost;port=3306;database=kvmarkt-test;userid=root;password=";
+            }
+            
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseMySql($"server={server};port=49596;database={database};user id={username};password={password}")
+                 //options.UseMySql($"server={server};port=49596;database={database};user id={username};password={password}")
+                 options.UseMySql(connString)
             );
 
             services.AddIdentity<ApplicationUser, IdentityRole>()

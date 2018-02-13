@@ -8,12 +8,12 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using WebApplication1.Data;
-using WebApplication1.Models;
-using WebApplication1.Responses;
-using WebApplication1.Services;
+using KvMarktApi.Data;
+using KvMarktApi.Models;
+using KvMarktApi.Responses;
+using KvMarktApi.Services;
 
-namespace WebApplication1.Controllers {
+namespace KvMarktApi.Controllers {
 
     [Authorize]
     [Route("api/[controller]")]

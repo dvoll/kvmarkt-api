@@ -10,11 +10,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using WebApplication1.Models;
-using WebApplication1.Models.ManageViewModels;
-using WebApplication1.Services;
+using KvMarktApi.Models;
+using KvMarktApi.Models.ManageViewModels;
+using KvMarktApi.Services;
 
-namespace WebApplication1.Controllers
+namespace KvMarktApi.Controllers
 {
     [Authorize]
     [Route("[controller]/[action]")]

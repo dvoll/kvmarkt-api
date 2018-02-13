@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace WebApplication1.Responses
+namespace KvMarktApi.Responses
 {
 
     public class ApiBadRequestResponse : ApiResponse

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace WebApplication1.Models.ManageViewModels
+namespace KvMarktApi.Models.ManageViewModels
 {
     public class EnableAuthenticatorViewModel
     {

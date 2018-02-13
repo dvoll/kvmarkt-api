@@ -6,12 +6,12 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
-using WebApplication1.Data;
-using WebApplication1.Models;
-using WebApplication1.Responses;
-using WebApplication1.Services;
+using KvMarktApi.Data;
+using KvMarktApi.Models;
+using KvMarktApi.Responses;
+using KvMarktApi.Services;
 
-namespace WebApplication1.Controllers {
+namespace KvMarktApi.Controllers {
 
     public class BaseController<T> : Controller, IBaseController<T> where T : BaseObject {
         protected readonly ApplicationDbContext _context;

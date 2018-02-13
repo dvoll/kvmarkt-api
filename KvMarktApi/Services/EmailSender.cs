@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApplication1.Data;
-using WebApplication1.Models;
+using KvMarktApi.Data;
+using KvMarktApi.Models;
 
-namespace WebApplication1.Services
+namespace KvMarktApi.Services
 {
     // This class is used by the application to send email for account confirmation and password reset.
     // For more details see https://go.microsoft.com/fwlink/?LinkID=532713

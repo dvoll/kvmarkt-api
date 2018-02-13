@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
-namespace WebApplication1.Views.Manage
+namespace KvMarktApi.Views.Manage
 {
     public static class ManageNavPages
     {

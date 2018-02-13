@@ -16,15 +16,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using WebApplication1.Data;
-using WebApplication1.Models;
-using WebApplication1.Models.AccountViewModels;
-using WebApplication1.Responses;
-using WebApplication1.Services;
+using KvMarktApi.Data;
+using KvMarktApi.Models;
+using KvMarktApi.Models.AccountViewModels;
+using KvMarktApi.Responses;
+using KvMarktApi.Services;
 
 
 
-namespace WebApplication1.Controllers
+namespace KvMarktApi.Controllers
 {
     [Authorize]
     [Route("api/[controller]/[action]")]
@@ -65,7 +65,7 @@ namespace WebApplication1.Controllers
             if (result.Succeeded)
             {
                 var appUser = await _userManager.Users.SingleOrDefaultAsync(r => r.Email == model.Email);
-                var contributor = await _context.Contributor.Include(c => c.Association).FirstOrDefaultAsync();
+                var contributor = await _context.Contributor.Include(c => c.Association).FirstOrDefaultAsync(r => r.Email == model.Email);
                 return Ok(new ApiOkResponse(new { 
                     token = GenerateJwtToken(model.Email, appUser),
                     email = model.Email,

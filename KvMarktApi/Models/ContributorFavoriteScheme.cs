@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WebApplication1.Models {
+namespace KvMarktApi.Models {
     [Table("contributor_favoriteSchemes")]
     public class ContributorFavoriteScheme : BaseObject
     {

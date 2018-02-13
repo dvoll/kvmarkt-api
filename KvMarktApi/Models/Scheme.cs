@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
-namespace WebApplication1.Models {
+namespace KvMarktApi.Models {
 
     // [Table("Schemes")]
     public class Scheme : BaseObject {

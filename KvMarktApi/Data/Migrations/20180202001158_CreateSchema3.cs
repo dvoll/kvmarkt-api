@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace WebApplication1.Data.Migrations
+namespace KvMarktApi.Data.Migrations
 {
     public partial class CreateSchema3 : Migration
     {

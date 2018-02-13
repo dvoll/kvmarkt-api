@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using WebApplication1.Models;
+using KvMarktApi.Models;
 
-namespace WebApplication1.Data
+namespace KvMarktApi.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WebApplication1.Models
+namespace KvMarktApi.Models
 {
     [Table("team_contributorOfTeam")]
     public class ContributorTeam : BaseObject

@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication1.Data;
-using WebApplication1.Models;
+using KvMarktApi.Data;
+using KvMarktApi.Models;
 
-namespace WebApplication1.Controllers
+namespace KvMarktApi.Controllers
 {
 
     [Authorize]

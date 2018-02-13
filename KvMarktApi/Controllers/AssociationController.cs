@@ -3,10 +3,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using WebApplication1.Data;
-using WebApplication1.Models;
+using KvMarktApi.Data;
+using KvMarktApi.Models;
 
-namespace WebApplication1.Controllers {
+namespace KvMarktApi.Controllers {
 
     [Authorize]
     [Route("api/[controller]")]

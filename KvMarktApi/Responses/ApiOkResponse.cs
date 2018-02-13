@@ -1,4 +1,4 @@
-namespace WebApplication1.Responses {
+namespace KvMarktApi.Responses {
 
     public class ApiOkResponse : ApiResponse
     {

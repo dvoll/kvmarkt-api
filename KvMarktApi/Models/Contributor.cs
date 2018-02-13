@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Newtonsoft.Json;
 
-namespace WebApplication1.Models
+namespace KvMarktApi.Models
 {
 
     public class Contributor : BaseObject
