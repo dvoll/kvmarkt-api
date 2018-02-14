@@ -53,10 +53,25 @@ namespace KvMarktApi.Controllers {
         }
     }
 
+    public class BaseCreateController<T> : BaseController<T>, IBaseCreateController<T> where T : BaseObject
+    {
+        public BaseCreateController(ApplicationDbContext context) : base(context)
+        { }
+
+        public async Task<IActionResult> Create(T item)
+        {
+            return null;
+        }
+    }
+
 
     interface IBaseController<T> {
         Task<IActionResult> List();
         Task<IActionResult> Get(long id);
+    }
+
+    interface IBaseCreateController<T> : IBaseController<T> {
+        Task<IActionResult> Create(T item);
     }
 
 

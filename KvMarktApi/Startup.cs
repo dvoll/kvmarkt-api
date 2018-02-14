@@ -37,7 +37,7 @@ namespace KvMarktApi
             //services.AddDbContext<ApplicationDbContext>(options =>
             //    options.UseInMemoryDatabase(Guid.NewGuid().ToString()));
             services.AddCors();
-            var isDev = false;
+            var isDev = true;
             var connString = "";
             if (!isDev) {
                 var input = Environment.GetEnvironmentVariable("MYSQLCONNSTR_localdb");

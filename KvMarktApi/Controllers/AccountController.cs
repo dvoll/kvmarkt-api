@@ -65,7 +65,7 @@ namespace KvMarktApi.Controllers
             if (result.Succeeded)
             {
                 var appUser = await _userManager.Users.SingleOrDefaultAsync(r => r.Email == model.Email);
-                var contributor = await _context.Contributor.Include(c => c.Association).FirstOrDefaultAsync(r => r.Email == model.Email);
+                var contributor = await _context.Contributor.Include(c => c.Association).SingleOrDefaultAsync(c => c.Email == model.Email);
                 return Ok(new ApiOkResponse(new { 
                     token = GenerateJwtToken(model.Email, appUser),
                     email = model.Email,
@@ -84,7 +84,7 @@ namespace KvMarktApi.Controllers
                 // _logger.LogWarning("User account locked out.");
                 return BadRequest(new ApiResponse(400, "User account locked out."));
             }
-            return BadRequest(new ApiResponse(400, "Invalid username or password."));
+            return Unauthorized(); // new ApiResponse(401, "Invalid username or password.")
 
         }
 

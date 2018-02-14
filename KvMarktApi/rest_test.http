@@ -21,7 +21,7 @@ cache-control: no-cache
 
 ###
 
-GET https://localhost:5000/api/scheme/
+GET http://localhost:5000/api/contributor/2
 content-type: application/json
 cache-control: no-cache
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYXJpb3ZvbGxAZ21haWwuY29tIiwianRpIjoiNDRhNGYxMTAtZmFjZS00OWVhLTg4NTItZjhjNmNmNmRhZTFhIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiIwNDc0MTVjNi1jMmI5LTRjNDgtOTIzMS04NmJkNDA0OTA1ZjUiLCJleHAiOjE1MjAxMTU4MzcsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.cX80pyNxSQHCcExnX4rBwWCKjcv6wdHAaS2iWEpGeL8
