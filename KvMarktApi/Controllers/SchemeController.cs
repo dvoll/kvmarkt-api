@@ -179,6 +179,49 @@ namespace KvMarktApi.Controllers {
             });
         }
 
+
+        [HttpPatch]
+        public async Task<IActionResult> Update([FromBody] SchemeDto model)
+        {
+            var contributor = await GetContributor(User);
+            // var searchResult = await _dbSet
+            //     .FirstOrDefaultAsync(s => s.Id == model.Id);
+            var scheme = new Scheme
+            {
+                Id = model.Id,
+                Title = model.Title,
+                Description = model.Description,
+                Content = model.Content,
+                Author = contributor,
+                Category = _context.Set<Category>().Single(c => c.Id == model.Category),
+                Place = _context.Set<Place>().Single(c => c.Id == model.Place),
+                Place2 = model.Place2 != null ? _context.Set<Place>().Single(c => c.Id == model.Place2) : null,
+                Place3 = model.Place3 != null ? _context.Set<Place>().Single(c => c.Id == model.Place3) : null,
+                AgeStart = model.AgeStart,
+                AgeEnd = model.AgeEnd
+            };
+            
+            try
+            {
+                _context.Update(scheme);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException /* ex */)
+            {
+                //Log the error (uncomment ex variable name and write a log.)
+            }
+
+            return base.ReturnResult(new SchemeDto(scheme)
+            {
+                IsFavorite = false,
+                AuthorName = $"{contributor.Firstname} {contributor.Lastname}",
+                Category = scheme.CategoryId,
+                CategoryName = scheme.Category.Name,
+                Place = scheme.PlaceId,
+                PlaceName = scheme.Place.Name
+            });
+        }
+
     }
 
 }
