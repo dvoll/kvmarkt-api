@@ -17,39 +17,4 @@ namespace KvMarktApi.Services
         }
     }
 
-
-    public class UserService : IUserService
-    {
-
-        // private readonly ApplicationDbContext _context;
-
-        public UserService(
-            // ApplicationDbContext context
-        ) {
-            // _context = context;
-        }
-
-        private Contributor contributor;
-        public Contributor Contributor
-        {
-            get { return contributor;}
-            set { contributor = value;}
-        }
-        
-        private ApplicationUser user;
-        public ApplicationUser User
-        {
-            get { return user;}
-            set { 
-                // contributor = _context.Set<Contributor>().Where(x => x.Email == value.Email).FirstOrDefault();
-                user = value;
-            }
-        }
-        
-    }
-
-    public interface IUserService {
-        Contributor Contributor { get; set; }
-        ApplicationUser User { get; set; }
-    }
 }

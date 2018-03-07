@@ -4,7 +4,6 @@
 }
 
 <h2>@ViewData["Title"]</h2>
-
 <div class="row">
     <div class="col-md-4">
         <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
@@ -17,6 +16,16 @@
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Firstname"></label>
+                <input asp-for="Firstname" class="form-control" />
+                <span asp-validation-for="Firstname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lastname"></label>
+                <input asp-for="Lastname" class="form-control" />
+                <span asp-validation-for="Lastname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Password"></label>
                 <input asp-for="Password" class="form-control" />
                 <span asp-validation-for="Password" class="text-danger"></span>
@@ -25,6 +34,16 @@
                 <label asp-for="ConfirmPassword"></label>
                 <input asp-for="ConfirmPassword" class="form-control" />
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Associations"></label>
+                <select asp-for="AssociationId" 
+                        asp-items="@(new SelectList(Model.Associations,"Id","Name"))">
+                    <option>Bitte auswählen</option>
+                </select>
+                <!-- <select>
+                    <option>Option</option>
+                </select> -->
             </div>
             <button type="submit" class="btn btn-default">Register</button>
         </form>

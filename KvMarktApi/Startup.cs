@@ -40,13 +40,13 @@ namespace KvMarktApi
             var isDev = true;
             var connString = "";
             if (!isDev) {
-                var input = Environment.GetEnvironmentVariable("MYSQLCONNSTR_localdb");
-                var inputArray = input.Split(';');
-                var server = inputArray[1].Split('=')[1];
-                // var port = inputArray[0].Split('=')[1];
-                var database = inputArray[0].Split('=')[1];
-                var username = inputArray[2].Split('=')[1];
-                var password = inputArray[3].Split('=')[1];
+                //var input = Environment.GetEnvironmentVariable("MYSQLCONNSTR_localdb");
+                //var inputArray = input.Split(';');
+                //var server = inputArray[1].Split('=')[1];
+                //// var port = inputArray[0].Split('=')[1];
+                //var database = inputArray[0].Split('=')[1];
+                //var username = inputArray[2].Split('=')[1];
+                //var password = inputArray[3].Split('=')[1];
                 connString = $"server=127.0.0.1;port=49596;database=localdb;userid=azure;password=6#vWHD_$";
             } else {
                 connString = "server=localhost;port=3306;database=kvmarkt-test;userid=root;password=";
@@ -86,7 +86,7 @@ namespace KvMarktApi
 
 
             // Add application services.
-            // services.AddTransient<IEmailSender, EmailSender>();
+            services.AddTransient<IEmailSender, EmailSender>();
 
 
             services.AddMvc()
