@@ -37,13 +37,13 @@ namespace KvMarktApi
             //services.AddDbContext<ApplicationDbContext>(options =>
             //    options.UseInMemoryDatabase(Guid.NewGuid().ToString()));
             services.AddCors();
-            var isDev = true;
+            var isDev = false;
             var connString = "";
             if (!isDev) {
                 //var input = Environment.GetEnvironmentVariable("MYSQLCONNSTR_localdb");
                 //var inputArray = input.Split(';');
                 //var server = inputArray[1].Split('=')[1];
-                //// var port = inputArray[0].Split('=')[1];
+                // var port = inputArray[0].Split('=')[1];
                 //var database = inputArray[0].Split('=')[1];
                 //var username = inputArray[2].Split('=')[1];
                 //var password = inputArray[3].Split('=')[1];
