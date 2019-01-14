@@ -3,7 +3,7 @@ content-type: application/json
 cache-control: no-cache
 
 {
-    "Email": "dariovoll@gmail.com",
+    "Email": "dariovoll+4@gmail.com",
     "Password": "Kartofl169-"
 }
 
@@ -21,9 +21,9 @@ cache-control: no-cache
 
 ###
 
-GET http://localhost:5000/api/contributor/2
+GET http://localhost:5000/api/scheme
 content-type: application/json
 cache-control: no-cache
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYXJpb3ZvbGxAZ21haWwuY29tIiwianRpIjoiNDRhNGYxMTAtZmFjZS00OWVhLTg4NTItZjhjNmNmNmRhZTFhIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiIwNDc0MTVjNi1jMmI5LTRjNDgtOTIzMS04NmJkNDA0OTA1ZjUiLCJleHAiOjE1MjAxMTU4MzcsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.cX80pyNxSQHCcExnX4rBwWCKjcv6wdHAaS2iWEpGeL8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYXJpb3ZvbGwrNEBnbWFpbC5jb20iLCJqdGkiOiI3MTY4YjU1Ni01N2Y4LTQ3NzEtYjY3YS1hODAwMWI1ZmE5NjkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImM5Mjc1NWM3LTljMzUtNGQ5OC04OTMxLWRlZjA3MzE4OWIwYiIsImV4cCI6MTUyMzAzMDU1OCwiaXNzIjoibG9jYWxob3N0IiwiYXVkIjoibG9jYWxob3N0In0.lNpS8cFbrsbqFVnOkt1nGdBBaGdYT-nsk1DA7ix_Lt8
 
 

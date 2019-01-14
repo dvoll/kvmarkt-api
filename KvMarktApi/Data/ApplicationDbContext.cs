@@ -14,6 +14,7 @@ namespace KvMarktApi.Data
         public DbSet<Contributor> Contributor { get; set; }
         public DbSet<Scheme> Schemes { get; set; }
         public DbSet<ContributorFavoriteScheme> ContributorFavoriteScheme { get; set; }
+        public DbSet<SchemeSelectedPlace> SchemeSelectedPlaces { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -37,7 +38,7 @@ namespace KvMarktApi.Data
 
             builder.Entity<ContributorFavoriteScheme>()
                 .HasKey(x => new { x.SchemeId, x.ContributorId });
-                // .HasKey(x => x.Id);
+            // .HasKey(x => x.Id);
 
             builder.Entity<ContributorFavoriteScheme>()
                 .HasOne(x => x.Scheme)
@@ -48,6 +49,22 @@ namespace KvMarktApi.Data
                 .HasOne(x => x.Contributor)
                 .WithMany(y => y.ContributorFavoriteSchemes)
                 .HasForeignKey(y => y.ContributorId);
+
+
+
+            builder.Entity<SchemeSelectedPlace>()
+                .HasKey(x => new { x.SchemeId, x.PlaceId });
+            // .HasKey(x => x.Id);
+
+            builder.Entity<SchemeSelectedPlace>()
+                .HasOne(x => x.Scheme)
+                .WithMany(y => y.SchemeSelectedPlaces)
+                .HasForeignKey(y => y.SchemeId);
+
+            builder.Entity<SchemeSelectedPlace>()
+                .HasOne(x => x.Place)
+                .WithMany(y => y.SchemeSelectedPlaces)
+                .HasForeignKey(y => y.PlaceId);
 
 
 
