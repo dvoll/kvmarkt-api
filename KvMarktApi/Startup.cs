@@ -33,18 +33,22 @@ namespace KvMarktApi
         {
 
             services.AddCors();
-            var isDev = true;
             var connString = "";
-            if (!isDev)
+            var environmentCoonectionString = Environment.GetEnvironmentVariable("MYSQLCONNSTR_localdb");
+            if (environmentCoonectionString != null)
             {
-                var input = Environment.GetEnvironmentVariable("MYSQLCONNSTR_localdb");
+                var input = environmentCoonectionString;
                 var inputArray = input.Split(';');
-                var server = inputArray[1].Split('=')[1];
+
+                var serverString = inputArray[1].Split('=')[1];
+                var serverArray = serverString.Split(':');
+                var server = serverArray[0];
+                var port = serverArray[1];
                 // var port = inputArray[0].Split('=')[1];
                 var database = inputArray[0].Split('=')[1];
                 var username = inputArray[2].Split('=')[1];
                 var password = inputArray[3].Split('=')[1];
-                connString = $"server={server};port=49596;database={database};userid={username};password={password}";
+                connString = $"server={server};port={port};database={database};userid={username};password={password}";
             }
             else
             {
